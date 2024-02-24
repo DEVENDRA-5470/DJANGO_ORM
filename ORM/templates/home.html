@@ -1,0 +1,54 @@
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <table style="width: 100%;" border="1" class="table">
+            <thead>
+                <tr>
+                    {% for item in headers %}
+                        <th style="text-transform: capitalize;">{{ item|replace_underscore }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                
+                  {% for d in data1 %}
+                <tr>
+                    <td>{{ d.id }}</td>
+                    <td>{{ d.stu_name }}</td>
+                    <td>{{ d.stu_age }}</td>
+                    <td>{{ d.stu_dob }}</td>
+                    <td>{{ d.stu_mob }}</td>
+                    <td>{{ d.stu_subject }}</td>
+                    <td>{{ d.stu_marks }}</td>
+                    <td>{{ d.stu_rank }}</td>
+                    <td>{{ d.stu_collage }}</td>
+                    <td>{{ d.stu_addmisson_date|date:"F Y" }}</td>
+                </tr>
+                {% endfor %}
+              
+            </tbody>
+
+             <tr>
+                <td>{{ data1.id }}</td>
+                <td>{{ data1.stu_name }}</td>
+                <td>{{ data1.stu_age }}</td>
+                <td>{{ data1.stu_dob }}</td>
+                <td>{{ data1.stu_mob }}</td>
+                <td>{{ data1.stu_subject }}</td>
+                <td>{{ data1.stu_marks }}</td>
+                <td>{{ data1.stu_rank }}</td>
+                <td>{{ data1.stu_collage }}</td>
+                <td>{{ data1.stu_addmisson_date }}</td>
+            </tr> 
+        </table>
+        
+    </div>
+</body>
+</html>
